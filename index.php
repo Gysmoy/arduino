@@ -8,6 +8,10 @@ $connection = $database->connect();
 if (isset($_GET['light'])) {
     $query = $connection->prepare('UPDATE Luces SET estado = !estado WHERE id = :id;');
     $query->execute([$_GET['light']]);
+    $rowCount = $query -> rowCount();
+    if ($rowCount) {
+        header('location: ./');
+    }
 }
 
 ?>
