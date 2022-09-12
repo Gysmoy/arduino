@@ -17,13 +17,14 @@ $request = $_POST;
 
 $db = new Database();
 $connection = $db -> connect();
-
-$query = $connection -> prepare('UPDATE rooms SET status = !status WHERE id = :id');
-$query -> execute([
-    ':id' => $request['id']
-]);
-
-$rowCount = $query -> rowCount();
+if (isset($_POST['type']) && $_POST['type'] == 'change') {
+    $query = $connection -> prepare('UPDATE rooms SET status = !status WHERE id = :id');
+    $query -> execute([
+        ':id' => $request['id']
+    ]);
+    
+    $rowCount = $query -> rowCount();
+}
 
 $query2 = $connection -> prepare('SELECT * FROM rooms WHERE id = :id');
 $query2 -> execute([
