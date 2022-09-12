@@ -21,11 +21,7 @@ $(document).on('click', '#btn-status', function () {
         url: `assets/php/change.php`,
         dataType: 'JSON',
         type: 'POST',
-        data: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
+        data: data
     }).done(response => {
         tr.attr('data-room', JSON.stringify(response));
         btn.prop('disabled', false);

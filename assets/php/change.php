@@ -13,7 +13,7 @@ header("Content-Type: application/json");
 
 include_once 'database.php';
 
-$request = json_decode(file_get_contents('php://input'), true);
+$request = $_POST;
 
 $db = new Database();
 $connection = $db -> connect();
