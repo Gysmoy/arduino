@@ -1,5 +1,16 @@
 <?php
 
+//Permisos CORS
+
+//* es un comodin para desplegar la información a cualquier servidor que realice la peticion.
+header("Access-Control-Allow-Origin: *"); 
+
+//Debemos dar permisos de acuerdo a la llamada o metodo que necesites GET,POST,UPDATE.
+header('Access-Control-Allow-Methods', 'POST');
+
+//Para formatos JSON se debe asignar el encabezado correspondiente.
+header("Content-Type: application/json");
+
 include_once 'database.php';
 
 $request = json_decode(file_get_contents('php://input'), true);
