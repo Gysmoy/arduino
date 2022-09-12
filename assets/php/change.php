@@ -14,11 +14,11 @@ $query -> execute([
 
 $rowCount = $query -> rowCount();
 
-$query = $connection -> prepare('SELECT * FROM rooms WHERE id = :id');
-$query -> execute([
+$query2 = $connection -> prepare('SELECT * FROM rooms WHERE id = :id');
+$query2 -> execute([
     ':id' => $request['id']
 ]);
-$row = $query -> fetch(PDO::FETCH_ASSOC);
+$row = $query2 -> fetch(PDO::FETCH_ASSOC);
 
 
 echo json_encode($ow);
