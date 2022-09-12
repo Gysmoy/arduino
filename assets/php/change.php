@@ -14,7 +14,11 @@ $query -> execute([
 
 $rowCount = $query -> rowCount();
 
-if ($rowCount) {
-    $request['status'] = $request['status'] == 1 ? 0: 1; 
-} 
-echo json_encode($request);
+$query = $connection -> prepare('SELECT * FROM rooms WHERE id = :id');
+$query -> execute([
+    ':id' => $request['id']
+]);
+$row = $query -> fetch(PDO::FETCH_ASSOC);
+
+
+echo json_encode($ow);
