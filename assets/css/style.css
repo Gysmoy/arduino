@@ -43,7 +43,8 @@ table td.descripcion {
     width: 100%;
     text-align: left;
 }
-table td.descripcion small{
+table td.descripcion small {
+    font-style: italic;
     display: block;
     margin-top: 5px;
     color: #98a6ad;
