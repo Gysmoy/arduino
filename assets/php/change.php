@@ -21,4 +21,4 @@ $query2 -> execute([
 $row = $query2 -> fetch(PDO::FETCH_ASSOC);
 
 
-echo json_encode($ow);
+echo json_encode($row);
