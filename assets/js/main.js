@@ -17,6 +17,7 @@ $(document).on('click', '#btn-status', function () {
     btn.prop('disabled', true);
     let tr = btn.parents('tr');
     let data = JSON.parse(tr.attr('data-room'));
+    data.type = 'change';
     $.ajax({
         url: `assets/php/change.php`,
         dataType: 'JSON',
